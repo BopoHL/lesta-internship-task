@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Загрузка файла | TF-IDF Анализ</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>TF-IDF Анализ Текста</h2>
+    <p>Загрузите .txt файл, и мы покажем вам 50 самых значимых слов в тексте по IDF.</p>
+
+    <form method="POST" enctype="multipart/form-data" class="upload-form">
+      <input type="file" name="file" accept=".txt" required>
+      <button type="submit">📂 Загрузить</button>
+    </form>
+  </div>
+</body>
+</html>

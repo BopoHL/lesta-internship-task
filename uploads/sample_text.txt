@@ -1,0 +1,4 @@
+
+Python is a popular programming language. Python can be used on a server to create web applications.
+It is open-source and widely used in data science, machine learning, and automation.
+The Python community is active and constantly improving the ecosystem.

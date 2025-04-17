@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TF-IDF Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Toп слова по IDF</h2>
+
+    {{ table|safe }}
+
+    <nav>
+        {% if page > 1 %}
+            <a href="{{ url_for('show_results', page=1) }}">⏮</a>
+            <a href="{{ url_for('show_results', page=page-1) }}">◀</a>
+        {% endif %}
+
+        {% for p in range(1, total_pages + 1) %}
+            {% if p == page %}
+                <span class="active">{{ p }}</span>
+            {% else %}
+                <a href="{{ url_for('show_results', page=p) }}">{{ p }}</a>
+            {% endif %}
+        {% endfor %}
+
+        {% if page < total_pages %}
+            <a href="{{ url_for('show_results', page=page+1) }}">▶</a>
+            <a href="{{ url_for('show_results', page=total_pages) }}">⏭</a>
+        {% endif %}
+    </nav>
+
+    <div class="fixed-buttons">
+    <a href="{{ url_for('upload_file') }}" class="action-btn left">⬅ Загрузить новый файл</a>
+    <a href="{{ url_for('download_csv') }}" class="action-btn right">⬇ Скачать результаты (CSV)</a>
+    </div>
+
+</body>
+</html>
